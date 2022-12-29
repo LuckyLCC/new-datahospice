@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huwo.datahospice.mapper.DhDriverMapper">
+
+
+    <insert id="upsert">
+        UPSERT INTO datahospice.dh_driver
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            <if test="companyId != null and companyId != ''">
+                companyId,
+            </if>
+            <if test="address != null and address != ''">
+                address,
+            </if>
+            <if test="driverPhone != null and driverPhone != ''">
+                driverPhone,
+            </if>
+            <if test="driverGender != null and driverGender != ''">
+                driverGender,
+            </if>
+            <if test="driverBirthday != null and driverBirthday != ''">
+                driverBirthday,
+            </if>
+            <if test="driverNation != null and driverNation != ''">
+                driverNation,
+            </if>
+            <if test="driverContactAddress != null and driverContactAddress != ''">
+                driverContactAddress,
+            </if>
+            <if test="licenseId != null and licenseId != ''">
+                licenseId,
+            </if>
+            <if test="getDriverLicenseDate != null and getDriverLicenseDate != ''">
+                getDriverLicenseDate,
+            </if>
+            <if test="driverLicenseOn != null and driverLicenseOn != ''">
+                driverLicenseOn,
+            </if>
+            <if test="driverLicenseOff != null and driverLicenseOff != ''">
+                driverLicenseOff,
+            </if>
+            <if test="taxiDriver != null and taxiDriver != ''">
+                taxiDriver,
+            </if>
+            <if test="certificateNo != null and certificateNo != ''">
+                certificateNo,
+            </if>
+            <if test="networkCarIssueOrganization != null and networkCarIssueOrganization != ''">
+                networkCarIssueOrganization,
+            </if>
+            <if test="networkCarIssueDate != null and networkCarIssueDate != ''">
+                networkCarIssueDate,
+            </if>
+            <if test="getNetworkCarProofDate != null and getNetworkCarProofDate != ''">
+                getNetworkCarProofDate,
+            </if>
+            <if test="networkCarProofOn != null and networkCarProofOn != ''">
+                networkCarProofOn,
+            </if>
+            <if test="networkCarProofOff != null and networkCarProofOff != ''">
+                networkCarProofOff,
+            </if>
+            <if test="registerDate != null and registerDate != ''">
+                registerDate,
+            </if>
+            <if test="commercialType != null and commercialType != ''">
+                commercialType,
+            </if>
+            <if test="contractCompany != null and contractCompany != ''">
+                contractCompany,
+            </if>
+            <if test="contractOn != null and contractOn != ''">
+                contractOn,
+            </if>
+            <if test="contractOff != null and contractOff != ''">
+                contractOff,
+            </if>
+            <if test="state != null and state != ''">
+                state,
+            </if>
+            <if test="flag != null and flag != ''">
+                flag,
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                updateTime,
+            </if>
+            <if test="driverIDCard != null and driverIDCard != ''">
+                driverIDCard,
+            </if>
+            <if test="rewardPunishment != null and rewardPunishment != ''">
+                rewardPunishment,
+            </if>
+            <if test="driverName != null and driverName != ''">
+                driverName,
+            </if>
+            <if test="symbol != null and symbol != ''">
+                symbol,
+            </if>
+            <if test="emergencyContact != null and emergencyContact != ''">
+                emergencyContact,
+            </if>
+            <if test="emergencyContactPhone != null and emergencyContactPhone != ''">
+                emergencyContactPhone,
+            </if>
+            <if test="emergencyContactAddress != null and emergencyContactAddress != ''">
+                emergencyContactAddress,
+            </if>
+            <if test="fullTimeDriver != null and fullTimeDriver != ''">
+                fullTimeDriver,
+            </if>
+            <if test="inDriverBlacklist != null and inDriverBlacklist != ''">
+                inDriverBlacklist,
+            </if>
+            <if test="channel != null and channel != ''">
+                channel,
+            </if>
+            <if test="createTime != null and createTime != ''">
+                createTime
+            </if>
+
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{id},
+            <if test="companyId != null and companyId != ''">
+                #{companyId},
+            </if>
+            <if test="address != null and address != ''">
+                #{address},
+            </if>
+            <if test="driverPhone != null and driverPhone != ''">
+                #{driverPhone},
+            </if>
+            <if test="driverGender != null and driverGender != ''">
+                #{driverGender},
+            </if>
+            <if test="driverBirthday != null and driverBirthday != ''">
+                #{driverBirthday},
+            </if>
+            <if test="driverNation != null and driverNation != ''">
+                #{driverNation},
+            </if>
+            <if test="driverContactAddress != null and driverContactAddress != ''">
+                #{driverContactAddress},
+            </if>
+            <if test="licenseId != null and licenseId != ''">
+                #{licenseId},
+            </if>
+            <if test="getDriverLicenseDate != null and getDriverLicenseDate != ''">
+                #{getDriverLicenseDate},
+            </if>
+            <if test="driverLicenseOn != null and driverLicenseOn != ''">
+                #{driverLicenseOn},
+            </if>
+            <if test="driverLicenseOff != null and driverLicenseOff != ''">
+                #{driverLicenseOff},
+            </if>
+            <if test="taxiDriver != null and taxiDriver != ''">
+                #{taxiDriver},
+            </if>
+            <if test="certificateNo != null and certificateNo != ''">
+                #{certificateNo},
+            </if>
+            <if test="networkCarIssueOrganization != null and networkCarIssueOrganization != ''">
+                #{networkCarIssueOrganization},
+            </if>
+            <if test="networkCarIssueDate != null and networkCarIssueDate != ''">
+                #{networkCarIssueDate},
+            </if>
+            <if test="getNetworkCarProofDate != null and getNetworkCarProofDate != ''">
+                #{getNetworkCarProofDate},
+            </if>
+            <if test="networkCarProofOn != null and networkCarProofOn != ''">
+                #{networkCarProofOn},
+            </if>
+            <if test="networkCarProofOff != null and networkCarProofOff != ''">
+                #{networkCarProofOff},
+            </if>
+            <if test="registerDate != null and registerDate != ''">
+                #{registerDate},
+            </if>
+            <if test="commercialType != null and commercialType != ''">
+                #{commercialType},
+            </if>
+            <if test="contractCompany != null and contractCompany != ''">
+                #{contractCompany},
+            </if>
+            <if test="contractOn != null and contractOn != ''">
+                #{contractOn},
+            </if>
+            <if test="contractOff != null and contractOff != ''">
+                #{contractOff},
+            </if>
+            <if test="state != null and state != ''">
+                #{state},
+            </if>
+            <if test="flag != null and flag != ''">
+                #{flag},
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                #{updateTime},
+            </if>
+            <if test="driverIDCard != null and driverIDCard != ''">
+                #{driverIDCard},
+            </if>
+            <if test="rewardPunishment != null and rewardPunishment != ''">
+                #{rewardPunishment},
+            </if>
+            <if test="driverName != null and driverName != ''">
+                #{driverName},
+            </if>
+            <if test="symbol != null and symbol != ''">
+                #{symbol},
+            </if>
+            <if test="emergencyContact != null and emergencyContact != ''">
+                #{emergencyContact},
+            </if>
+            <if test="emergencyContactPhone != null and emergencyContactPhone != ''">
+                #{emergencyContactPhone},
+            </if>
+            <if test="emergencyContactAddress != null and emergencyContactAddress != ''">
+                #{emergencyContactAddress},
+            </if>
+            <if test="fullTimeDriver != null and fullTimeDriver != ''">
+                #{fullTimeDriver},
+            </if>
+            <if test="inDriverBlacklist != null and inDriverBlacklist != ''">
+                #{inDriverBlacklist},
+            </if>
+            <if test="channel != null and channel != ''">
+                #{channel},
+            </if>
+            <if test="createTime != null and createTime != ''">
+                #{createTime}
+            </if>
+
+        </trim>
+
+    </insert>
+
+
+    <select id="selectByChannelAndLicenseIdAndAddress" resultType="com.huwo.datahospice.domain.DhDriver">
+        select * from datahospice.dh_driver  where channel= #{channel} and licenseId= #{licenseId} and address= #{address}
+    </select>
+</mapper>

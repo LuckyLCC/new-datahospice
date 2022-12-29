@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huwo.datahospice.mapper.BasicQualityServiceMapper">
+
+
+    <insert id="upsert">
+        UPSERT INTO datahospice.du_basic_quality
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            <if test="ipcType != null and ipcType != ''">
+                ipcType,
+            </if>
+            <if test="phoneNo != null and phoneNo != ''">
+                phoneNo,
+            </if>
+            <if test="name != null and name != ''">
+                name,
+            </if>
+            <if test="vehicleNo != null and vehicleNo != ''">
+                vehicleNo,
+            </if>
+            <if test="certNo != null and certNo != ''">
+                certNo,
+            </if>
+            <if test="data != null and data != ''">
+                data,
+            </if>
+            <if test="channel != null and channel != ''">
+                channel,
+            </if>
+            <if test="address != null and address != ''">
+                address,
+            </if>
+            <if test="storageTime != null and storageTime != ''">
+                storageTime
+            </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{id},
+            <if test="ipcType != null and ipcType != ''">
+                #{ipcType},
+            </if>
+            <if test="phoneNo != null and phoneNo != ''">
+                #{phoneNo},
+            </if>
+            <if test="name != null and name != ''">
+                #{name},
+            </if>
+            <if test="vehicleNo != null and vehicleNo != ''">
+                #{vehicleNo},
+            </if>
+            <if test="certNo != null and certNo != ''">
+                #{certNo},
+            </if>
+            <if test="data != null and data != ''">
+                #{data},
+            </if>
+            <if test="channel != null and channel != ''">
+                #{channel},
+            </if>
+            <if test="address != null and address != ''">
+                #{address},
+            </if>
+            <if test="storageTime != null and storageTime != ''">
+                #{storageTime}
+            </if>
+
+        </trim>
+    </insert>
+</mapper>

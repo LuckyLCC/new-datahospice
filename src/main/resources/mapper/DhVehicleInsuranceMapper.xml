@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huwo.datahospice.mapper.DhVehicleInsuranceMapper">
+
+
+    <insert id="upsert">
+        UPSERT INTO datahospice.dh_vehicle_insurance
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            <if test="companyId != null and companyId != ''">
+                companyId,
+            </if>
+            <if test="vehicleNo != null and vehicleNo != ''">
+                vehicleNo,
+            </if>
+            <if test="insurCom != null and insurCom != ''">
+                insurCom,
+            </if>
+            <if test="insurNum != null and insurNum != ''">
+                insurNum,
+            </if>
+            <if test="insurType != null and insurType != ''">
+                insurType,
+            </if>
+            <if test="insurCount != null and insurCount != ''">
+                insurCount,
+            </if>
+            <if test="insurEff != null and insurEff != ''">
+                insurEff,
+            </if>
+            <if test="insurExp != null and insurExp != ''">
+                insurExp,
+            </if>
+            <if test="flag != null and flag != ''">
+                flag,
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                updateTime,
+            </if>
+            <if test="plateColor != null and plateColor != ''">
+                plateColor,
+            </if>
+            <if test="address != null and address != ''">
+                address,
+            </if>
+            <if test="symbol != null and symbol != ''">
+                symbol,
+            </if>
+            <if test="channel != null and channel != ''">
+                channel,
+            </if>
+            <if test="createTime != null and createTime != ''">
+                createTime,
+            </if>
+
+
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{id},
+            <if test="companyId != null and companyId != ''">
+                #{companyId},
+            </if>
+            <if test="vehicleNo != null and vehicleNo != ''">
+                #{vehicleNo},
+            </if>
+            <if test="insurCom != null and insurCom != ''">
+                #{insurCom},
+            </if>
+            <if test="insurNum != null and insurNum != ''">
+                #{insurNum},
+            </if>
+            <if test="insurType != null and insurType != ''">
+                #{insurType},
+            </if>
+            <if test="insurCount != null and insurCount != ''">
+                #{insurCount},
+            </if>
+            <if test="insurEff != null and insurEff != ''">
+                #{insurEff},
+            </if>
+            <if test="insurExp != null and insurExp != ''">
+                #{insurExp},
+            </if>
+            <if test="flag != null and flag != ''">
+                #{flag},
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                #{updateTime},
+            </if>
+            <if test="plateColor != null and plateColor != ''">
+                #{plateColor},
+            </if>
+            <if test="address != null and address != ''">
+                #{address},
+            </if>
+            <if test="symbol != null and symbol != ''">
+                #{symbol},
+            </if>
+            <if test="channel != null and channel != ''">
+                #{channel},
+            </if>
+            <if test="createTime != null and createTime != ''">
+                #{createTime},
+            </if>
+
+
+        </trim>
+
+    </insert>
+
+
+
+    <select id="selectByChannelAndVehicleNoAndAddress"
+            resultType="com.huwo.datahospice.domain.DhVehicleInsurance">
+        select * from datahospice.dh_vehicle_insurance  where channel= #{channel} and vehicleNo= #{vehicleNo} and address= #{address}
+    </select>
+</mapper>

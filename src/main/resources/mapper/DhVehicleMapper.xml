@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.huwo.datahospice.mapper.DhVehicleMapper">
+
+
+    <insert id="upsert">
+        UPSERT INTO datahospice.dh_vehicle
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            id,
+            <if test="companyId != null and companyId != ''">
+                companyId,
+            </if>
+            <if test="address != null and address != ''">
+                address,
+            </if>
+            <if test="vehicleNo != null and vehicleNo != ''">
+                vehicleNo,
+            </if>
+            <if test="plateColor != null and plateColor != ''">
+                plateColor,
+            </if>
+            <if test="seats != null and seats != ''">
+                seats,
+            </if>
+            <if test="brand != null and brand != ''">
+                brand,
+            </if>
+            <if test="model != null and model != ''">
+                model,
+            </if>
+            <if test="vehicleType != null and vehicleType != ''">
+                vehicleType,
+            </if>
+            <if test="ownerName != null and ownerName != ''">
+                ownerName,
+            </if>
+            <if test="vehicleColor != null and vehicleColor != ''">
+                vehicleColor,
+            </if>
+            <if test="engineId != null and engineId != ''">
+                engineId,
+            </if>
+            <if test="vin != null and vin != ''">
+                vin,
+            </if>
+            <if test="certifyDateA != null and certifyDateA != ''">
+                certifyDateA,
+            </if>
+            <if test="fuelType != null and fuelType != ''">
+                fuelType,
+            </if>
+            <if test="engineDisplace != null and engineDisplace != ''">
+                engineDisplace,
+            </if>
+            <if test="transAgency != null and transAgency != ''">
+                transAgency,
+            </if>
+            <if test="transArea != null and transArea != ''">
+                transArea,
+            </if>
+            <if test="transDateStart != null and transDateStart != ''">
+                transDateStart,
+            </if>
+            <if test="transDateStop != null and transDateStop != ''">
+                transDateStop,
+            </if>
+            <if test="certifyDateB != null and certifyDateB != ''">
+                certifyDateB,
+            </if>
+            <if test="fixStateb != null and fixStateb != ''">
+                fixStateb,
+            </if>
+            <if test="checkState != null and checkState != ''">
+                checkState,
+            </if>
+            <if test="feePrintId != null and feePrintId != ''">
+                feePrintId,
+            </if>
+            <if test="gpsBrand != null and gpsBrand != ''">
+                gpsBrand,
+            </if>
+            <if test="gpsModel != null and gpsModel != ''">
+                gpsModel,
+            </if>
+            <if test="gpsImei != null and gpsImei != ''">
+                gpsImei,
+            </if>
+            <if test="gpsInstallDate != null and gpsInstallDate != ''">
+                gpsInstallDate,
+            </if>
+            <if test="registerDate != null and registerDate != ''">
+                registerDate,
+            </if>
+            <if test="commercialType != null and commercialType != ''">
+                commercialType,
+            </if>
+            <if test="fareType != null and fareType != ''">
+                fareType,
+            </if>
+            <if test="state != null and state != ''">
+                state,
+            </if>
+            <if test="flag != null and flag != ''">
+                flag,
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                updateTime,
+            </if>
+            <if test="enginePower != null and enginePower != ''">
+                enginePower,
+            </if>
+            <if test="wheelBase != null and wheelBase != ''">
+                wheelBase,
+            </if>
+            <if test="checkDate != null and checkDate != ''">
+                checkDate,
+            </if>
+            <if test="vehicleTec != null and vehicleTec != ''">
+                vehicleTec
+            </if>
+            <if test="vehicleSafe != null and vehicleSafe != ''">
+                vehicleSafe
+            </if>
+            <if test="symbol != null and symbol != ''">
+                symbol
+            </if>
+            <if test="certificate != null and certificate != ''">
+                certificate
+            </if>
+            <if test="nextFixDate != null and nextFixDate != ''">
+                nextFixDate
+            </if>
+            <if test="driverLicense != null and driverLicense != ''">
+                driverLicense
+            </if>
+            <if test="driverLicenseStartTime != null and driverLicenseStartTime != ''">
+                driverLicenseStartTime
+            </if>
+            <if test="driverLicenseEndTime != null and driverLicenseEndTime != ''">
+                driverLicenseEndTime
+            </if>
+            <if test="channel != null and channel != ''">
+                channel
+            </if>
+
+            <if test="createTime != null and createTime != ''">
+                createTime
+            </if>
+
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{id},
+            <if test="companyId != null and companyId != ''">
+                #{companyId},
+            </if>
+            <if test="address != null and address != ''">
+                #{address},
+            </if>
+            <if test="vehicleNo != null and vehicleNo != ''">
+                #{vehicleNo},
+            </if>
+            <if test="plateColor != null and plateColor != ''">
+                #{plateColor},
+            </if>
+            <if test="seats != null and seats != ''">
+                #{seats},
+            </if>
+            <if test="brand != null and brand != ''">
+                #{brand},
+            </if>
+            <if test="model != null and model != ''">
+                #{model},
+            </if>
+            <if test="vehicleType != null and vehicleType != ''">
+                #{vehicleType},
+            </if>
+            <if test="ownerName != null and ownerName != ''">
+                #{ownerName},
+            </if>
+            <if test="vehicleColor != null and vehicleColor != ''">
+                #{vehicleColor},
+            </if>
+            <if test="engineId != null and engineId != ''">
+                #{engineId},
+            </if>
+            <if test="vin != null and vin != ''">
+                #{vin},
+            </if>
+            <if test="certifyDateA != null and certifyDateA != ''">
+                #{certifyDateA},
+            </if>
+            <if test="fuelType != null and fuelType != ''">
+                #{fuelType},
+            </if>
+            <if test="engineDisplace != null and engineDisplace != ''">
+                #{engineDisplace},
+            </if>
+            <if test="transAgency != null and transAgency != ''">
+                #{transAgency},
+            </if>
+            <if test="transArea != null and transArea != ''">
+                #{transArea},
+            </if>
+            <if test="transDateStart != null and transDateStart != ''">
+                #{transDateStart},
+            </if>
+            <if test="transDateStop != null and transDateStop != ''">
+                #{transDateStop},
+            </if>
+            <if test="certifyDateB != null and certifyDateB != ''">
+                #{certifyDateB},
+            </if>
+            <if test="fixStateb != null and fixStateb != ''">
+                #{fixStateb},
+            </if>
+            <if test="checkState != null and checkState != ''">
+                #{checkState},
+            </if>
+            <if test="feePrintId != null and feePrintId != ''">
+                #{feePrintId},
+            </if>
+            <if test="gpsBrand != null and gpsBrand != ''">
+                #{gpsBrand},
+            </if>
+            <if test="gpsModel != null and gpsModel != ''">
+                #{gpsModel},
+            </if>
+            <if test="gpsImei != null and gpsImei != ''">
+                #{gpsImei},
+            </if>
+            <if test="gpsInstallDate != null and gpsInstallDate != ''">
+                #{gpsInstallDate},
+            </if>
+            <if test="registerDate != null and registerDate != ''">
+                #{registerDate},
+            </if>
+            <if test="commercialType != null and commercialType != ''">
+                #{commercialType},
+            </if>
+            <if test="fareType != null and fareType != ''">
+                #{fareType},
+            </if>
+            <if test="state != null and state != ''">
+                #{state},
+            </if>
+            <if test="flag != null and flag != ''">
+                #{flag},
+            </if>
+            <if test="updateTime != null and updateTime != ''">
+                #{updateTime},
+            </if>
+            <if test="enginePower != null and enginePower != ''">
+                #{enginePower},
+            </if>
+            <if test="wheelBase != null and wheelBase != ''">
+                #{wheelBase},
+            </if>
+            <if test="checkDate != null and checkDate != ''">
+                #{checkDate},
+            </if>
+            <if test="vehicleTec != null and vehicleTec != ''">
+                #{vehicleTec},
+            </if>
+            <if test="vehicleSafe != null and vehicleSafe != ''">
+                #{vehicleSafe},
+            </if>
+            <if test="symbol != null and symbol != ''">
+                #{symbol},
+            </if>
+            <if test="certificate != null and certificate != ''">
+                #{certificate},
+            </if>
+            <if test="nextFixDate != null and nextFixDate != ''">
+                #{nextFixDate},
+            </if>
+            <if test="driverLicense != null and driverLicense != ''">
+                #{driverLicense},
+            </if>
+            <if test="driverLicenseStartTime != null and driverLicenseStartTime != ''">
+                #{driverLicenseStartTime},
+            </if>
+            <if test="driverLicenseEndTime != null and driverLicenseEndTime != ''">
+                #{driverLicenseEndTime},
+            </if>
+            <if test="channel != null and channel != ''">
+                #{channel},
+            </if>
+
+            <if test="createTime != null and createTime != ''">
+                #{createTime},
+            </if>
+
+        </trim>
+
+    </insert>
+
+
+    <select id="selectByChannelAndVehicleNoAndAddress" resultType="com.huwo.datahospice.domain.DhVehicle">
+        select * from datahospice.dh_vehicle  where channel= #{channel} and vehicleNo= #{vehicleNo} and address= #{address}
+    </select>
+</mapper>

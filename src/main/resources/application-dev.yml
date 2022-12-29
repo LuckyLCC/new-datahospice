@@ -1,0 +1,136 @@
+spring:
+  application:
+    name: datahospice
+
+
+  kafka:
+    producer: # producer 生产者
+      retries: 0 # 重试次数
+      acks: 1 # 应答级别:多少个分区副本备份完成时向生产者发送ack确认(可选0、1、all/-1)
+      batch-size: 16384 # 批量大小
+      buffer-memory: 33554432 # 生产端缓冲区大小
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      #      value-serializer: com.itheima.demo.config.MySerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      bootstrap-servers: 192.168.202.102:9092,192.168.202.103:9092,192.168.202.104:9092
+
+
+    consumer: # consumer消费者
+      group-id: javagroup # 默认的消费组ID
+      enable-auto-commit: true # 是否自动提交offset
+      auto-commit-interval: 100  # 提交offset延时(接收到消息后多久提交offset)
+
+      # earliest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，从头开始消费
+      # latest:当各分区下有已提交的offset时，从提交的offset开始消费；无提交的offset时，消费新产生的该分区下的数据
+      # none:topic各分区都存在已提交的offset时，从offset后开始消费；只要有一个分区不存在已提交的offset，则抛出异常
+      auto-offset-reset: latest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      #      value-deserializer: com.itheima.demo.config.MyDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+      concurrency: 3
+      bootstrap-servers: 192.168.202.102:9092,192.168.202.103:9092,192.168.202.104:9092
+  #      bootstrap-servers: namenode1.callme:6667,namenode2.callme:6667,namenode3.callme:6667
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      #      username: jw_data
+      #      password: Huwo_jw_123!@#
+      database: liuchang
+
+  redis:
+    host: 172.29.0.236
+    port: 6381
+    database: 3
+    timeout: 4000
+    password: huwoRadis
+    jedis:
+      pool:
+        max-wait: -1
+        max-active: -1
+        max-idle: 20
+        min-idle: 10
+
+
+          #  mysql:
+          #    hw:
+          #      driver-class-name: com.mysql.cj.jdbc.Driver
+          #      jdbc-url: jdbc:mysql://pe-mirror.hds.huwo.tech:3306/callme?useSSL=false&autoReconnect=true
+          #      username: upstream
+          #      password: 2dMce5zYuUM5
+          #    online:
+          #      driver-class-name: com.mysql.cj.jdbc.Driver
+          #      jdbc-url: jdbc:mysql://172.29.0.202:3306/hw_datapowered
+          #      username: datapowered
+          #      password: HTUgMc4D5kTm
+
+#  datasource:
+#    dynamic:
+#      primary: master #设置默认的数据源或者数据源组,默认值即为master
+#      strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+#      datasource:
+#        master:
+#          url: jdbc:phoenix:hadoop102,hadoop103,hadoop104:2181
+#          driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
+#          type: com.zaxxer.hikari.HikariDataSource
+#          hikari:
+#            # 池中维护的最小空闲连接数
+#            minimum-idle: 10
+#            # 池中最大连接数，包括闲置和使用中的连接
+#            maximum-pool-size: 20
+#            # 此属性控制从池返回的连接的默认自动提交行为。默认为true
+#            auto-commit: true
+#            # 允许最长空闲时间
+#            idle-timeout: 30000
+#            # 此属性表示连接池的用户定义名称，主要显示在日志记录和JMX管理控制台中，以标识池和池配置。 默认值：自动生成
+#            pool-name: custom-hikari
+#            #此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+#            max-lifetime: 1800000
+#            # 数据库连接超时时间,默认30秒，即30000
+#            connection-timeout: 30000
+#            # 连接测试sql 这个地方需要根据数据库方言差异而配置 例如 oracle 就应该写成  select 1 from dual
+#            connection-test-query: SELECT 1
+#        slave_1:
+#          url: jdbc:mysql://localhost:27017/liuchang?useSSL=false&autoReconnect=true
+#          username: root
+#          password: root
+#          driver-class-name: com.mysql.cj.jdbc.Driver
+#          #......省略
+#          #以上会配置一个默认库master，一个组slave下有两个子库slave_1,slave_2
+
+
+  datasource:
+    driver-class-name: org.apache.phoenix.jdbc.PhoenixDriver
+    url: jdbc:phoenix:hadoop102,hadoop103,hadoop104:2181
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      # 池中维护的最小空闲连接数
+      minimum-idle: 10
+      # 池中最大连接数，包括闲置和使用中的连接
+      maximum-pool-size: 20
+      # 此属性控制从池返回的连接的默认自动提交行为。默认为true
+      auto-commit: true
+      # 允许最长空闲时间
+      idle-timeout: 30000
+      # 此属性表示连接池的用户定义名称，主要显示在日志记录和JMX管理控制台中，以标识池和池配置。 默认值：自动生成
+      pool-name: custom-hikari
+      #此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+      max-lifetime: 1800000
+      # 数据库连接超时时间,默认30秒，即30000
+      connection-timeout: 30000
+    # 连接测试sql 这个地方需要根据数据库方言差异而配置 例如 oracle 就应该写成  select 1 from dual
+      connection-test-query: SELECT 1
+
+plateFormName: HW
+
+
+server:
+  port: 8081
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+

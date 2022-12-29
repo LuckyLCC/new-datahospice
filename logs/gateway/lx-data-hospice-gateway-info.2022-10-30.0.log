@@ -1,0 +1,5 @@
+2022-10-30 07:51:56.514 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - javagroup: partitions revoked: []
+2022-10-30 07:51:56.718 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - javagroup: partitions revoked: [lx-datahospice.liuchang.basic.quality-0]
+2022-10-30 07:51:58.156 [org.springframework.kafka.KafkaListenerEndpointContainer#0-1-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - javagroup: partitions assigned: []
+2022-10-30 07:51:58.159 [org.springframework.kafka.KafkaListenerEndpointContainer#0-2-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - javagroup: partitions assigned: []
+2022-10-30 07:51:58.569 [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] INFO  o.s.kafka.listener.KafkaMessageListenerContainer - javagroup: partitions assigned: [lx-datahospice.liuchang.basic.quality-0]
